@@ -20,11 +20,12 @@ Yres := 720
 Xpos_center := Xres / 2
 Ypos_center := Yres / 2
 
-;ok 400
+;ok 500
 sleep 1000
 
 MouseClick, X1, Xpos_center + 350 , Ypos_center - 200 , 1, 0
 
+;ok 500
 sleep 1000
 
 MouseClick, left
