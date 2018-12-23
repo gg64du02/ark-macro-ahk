@@ -5,6 +5,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; a script to farm more easily with argi and doedi
 
+
+
 while(1){
 	KeyWait w
 	KeyWait s
@@ -14,3 +16,10 @@ while(1){
 	sleep 200
 	Send {x up}
 }
+
+
+;f12::
+MButton::
+Pause
+Suspend
+return
