@@ -13,14 +13,14 @@ MButton::
 
 ; fertilizer
 
-Send e
-sleep 500
-Send e
-sleep 500
-Send e
-sleep 500
-Send e
-sleep 500
+;Send e
+;sleep 500
+;Send e
+;sleep 500
+;Send e
+;sleep 500
+;Send e
+;sleep 500
 
 
 
