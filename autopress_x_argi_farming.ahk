@@ -22,4 +22,6 @@ while(1){
 MButton::
 Pause
 Suspend
+KeyWait MButton
+sleep 500
 return
