@@ -32,7 +32,10 @@ Disable_Keys(BOOL := False) { ; (en/dis) -able all keys
     global Block := BOOL ? "On" : "Off"
 
     For each, KeyName in StrSplit(AllKeys, "|")
-        Hotkey, *%KeyName%, Block_Input, %Block% UseErrorLevel
+		if(KeyName!="Tab")
+			Hotkey, *%KeyName%, Block_Input, %Block% UseErrorLevel
+		;Hotkey, *%KeyName%, Block_Input, %Block% UseErrorLevel
+		;MsgBox %AllKeys%
 
     Block_Input:
         If (Block = "On") {
