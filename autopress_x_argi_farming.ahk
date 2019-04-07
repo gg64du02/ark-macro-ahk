@@ -18,11 +18,13 @@ while(1){
 }
 
 
+;MButton::
 ;f12::
-MButton::
+v::
 Pause
 Suspend
+sleep 1500
 Send x
-KeyWait MButton
+KeyWait v
 sleep 500
 return
