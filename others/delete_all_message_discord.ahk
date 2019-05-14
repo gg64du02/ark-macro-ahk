@@ -7,7 +7,7 @@ MButton::
 
 test := 0
 
-while(test<10){
+while(test<10000){
 ;Loop, 1000
 ;{
 	Send {Up}
@@ -20,7 +20,7 @@ while(test<10){
 	;MsgBox % Mod(test,3)
 	
 	if(Mod(test,10)=0){
-		MsgBox %test%
+		;MsgBox %test%
 		;click search bar
 		click 1728 42
 		;press enter
@@ -40,4 +40,4 @@ while(test<10){
 }
 ;}
 
-w::return
+Esc::ExitApp
