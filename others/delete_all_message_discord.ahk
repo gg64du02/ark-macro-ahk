@@ -5,17 +5,39 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 MButton::
 
-i := 0
+test := 0
 
-;while(i<100){
-Loop, 50
-{
+while(test<10){
+;Loop, 1000
+;{
 	Send {Up}
 	send, ^a
 	send, {BS}
 	send, {Enter}
 	send, {Enter}
-	sleep,500
-	i := i + 1
+	sleep, 500
+	
+	;MsgBox % Mod(test,3)
+	
+	if(Mod(test,10)=0){
+		MsgBox %test%
+		;click search bar
+		click 1728 42
+		;press enter
+		sleep, 500
+		send, {Enter}
+		
+		;click access
+		sleep, 500
+		click 1858 240
+		
+		sleep, 500
+		click 985 985
+	
+	}
+	
+	test := test+ 1
 }
 ;}
+
+w::return
