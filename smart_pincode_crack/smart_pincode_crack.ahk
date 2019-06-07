@@ -54,8 +54,6 @@ Attempt(code)
     Log(code)
     ; Wait for the window to close
     Sleep, 800
-	;wait for the invisible cooldown after a wrong pin
-    ;eSleep, 30000
 
     return
 }
@@ -94,6 +92,10 @@ MButton::
 		if(start1==""){
 			;MsgBox 1if(not (start1=="")){
 			;MsgBox Attempt(code): %code%
+			
+			;wait for the invisible cooldown after a wrong pin
+			Sleep, 26000
+			
 			Attempt(code)
 			
 			
