@@ -15,9 +15,21 @@ while(test<10000){
 	send, {BS}
 	send, {Enter}
 	send, {Enter}
-	sleep, 500
+	sleep, 350
 	
 	;MsgBox % Mod(test,3)
+	
+	if(Mod(test,430)=1){
+		sleep, 500
+		click 1790 92
+	
+	}
+	
+	if(Mod(test,470)=235){
+		sleep, 500
+		click 1860 92
+	
+	}
 	
 	if(Mod(test,10)=0){
 		;MsgBox %test%
@@ -28,7 +40,7 @@ while(test<10000){
 		send, {Enter}
 		
 		;click access
-		sleep, 500
+		sleep, 1500
 		click 1858 240
 		
 		sleep, 500
