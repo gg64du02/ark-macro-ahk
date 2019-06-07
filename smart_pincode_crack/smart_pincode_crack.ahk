@@ -13,7 +13,8 @@
 +^R::Reload      ; Reloads Script: Control + Shift + R
 +^P::Pause       ; (Un)Pauses  Script: Control + Shift + P
 Ins::Suspend     ; Suspend Script: Insert
-Esc::ExitApp     ; Exit the Script: Escape
+F1::ExitApp     ; Exit the Script: Escape
+
 
 ;list of ranked common pincode https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/four-digit-pin-codes-sorted-by-frequency-withcount.csv
 
@@ -54,7 +55,7 @@ Attempt(code)
     ; Wait for the window to close
     Sleep, 800
 	;wait for the invisible cooldown after a wrong pin
-    Sleep, 30000
+    ;eSleep, 30000
 
     return
 }
@@ -88,12 +89,28 @@ MButton::
 		; Pad the number with zeros if we need to
 		code := word_array[1]
 		
-		;MsgBox code: %code%
+		;MsgBox code: %code%e
 		
 		if(start1==""){
 			;MsgBox 1if(not (start1=="")){
 			;MsgBox Attempt(code): %code%
 			Attempt(code)
+			
+			
+			sleep, 1000
+			send, {Enter}
+			sleep, 1000
+			
+			send, %code%
+			sleep, 1000
+			send, {Tab}
+			sleep, 1000
+			
+			send {F12}
+			sleep, 1000
+			
+			send {Esc}
+			sleep, 1000
 		}
 		else{
 			;MsgBox 1!if(not (start1=="")){
