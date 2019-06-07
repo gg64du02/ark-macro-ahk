@@ -51,7 +51,9 @@ Attempt(code)
     ; Log the code that was tried
     Log(code)
     ; Wait for the window to close
-    Sleep, 600
+    Sleep, 800
+	;wait for the invisible cooldown after a wrong pin
+    Sleep, 30000
 
     return
 }
@@ -87,6 +89,35 @@ Attempt(code)
         Attempt(code)
         ; Onto the next
         start++
+		
+		if(Mod(start,30)=0){
+			send {Tab}
+			
+			sleep, 100
+			send {BS}
+			sleep, 100
+			send {BS}
+			send {BS}
+			sleep, 100
+			send {BS}
+			send {BS}
+			sleep, 100
+			send {BS}
+			sleep, 100
+			
+			send, %start%
+			sleep, 100
+			
+			send {F12}
+			
+			
+			send {Tab}
+			sleep, 100
+			send {Tab}
+			sleep, 100
+		
+		}
+	
     }
     ; Finished, clear the tooltip
     ToolTip
