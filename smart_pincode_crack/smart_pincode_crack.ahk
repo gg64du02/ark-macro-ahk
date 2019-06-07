@@ -54,7 +54,7 @@ Attempt(code)
     ; Wait for the window to close
     Sleep, 800
 	;wait for the invisible cooldown after a wrong pin
-    ;Sleep, 30000
+    Sleep, 30000
 
     return
 }
