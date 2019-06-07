@@ -12,7 +12,7 @@ test := 0
 
 sleep, 2000
 
-while(test<10){
+while(test<1000){
 ;Loop, 1000
 ;{
 
