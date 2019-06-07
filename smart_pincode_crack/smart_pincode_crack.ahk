@@ -66,11 +66,13 @@ MButton::
     ; Ask the user where they want to start from and now many codes to try, as well as if they want to try the common pin codes first
 	;start := 0
 	
-    InputBox, start, Enter the pincode to resume at
+    InputBox, start1, Enter the pincode to resume at
 	
-	MsgBox start: %start%
+	MsgBox start1: %start1%
 	Loop
 	{
+		MsgBox start1: %start1%
+		MsgBox start2: %start2%
 		FileReadLine, line, four-digit-pin-codes-sorted-by-frequency-withcount.txt, %A_Index%
 		if ErrorLevel
 			break
@@ -88,17 +90,14 @@ MButton::
 		
 		MsgBox code: %code%
 		
-		if(%start%==""){
-			MsgBox Attempt(code): %code%
-			Attempt(code)
+		if(start==""){
+			MsgBox if(start==""){
 		}
-		else{
-			MsgBox passing: %code%
-			if(%start%!=code){
-				start =""
-				continue
-			}
-		}
+		
+		
+		
+		start2 =%code%
+		
 	}
     ; Finished, clear the tooltip
     ToolTip
