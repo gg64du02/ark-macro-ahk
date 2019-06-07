@@ -42,8 +42,16 @@ MButton::
 		
 		sleep 500
 		
-		send e
-		sleep 500
+		send {e down}
+		sleep 100
 		
+		send {e up}
+		sleep 100
+		
+		if(Mod(test,30)=0){
+			sleep, 100
+			
+			send {F12}
+		}
 	}
 return
