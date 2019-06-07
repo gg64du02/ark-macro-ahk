@@ -66,9 +66,9 @@ MButton::
     ; Ask the user where they want to start from and now many codes to try, as well as if they want to try the common pin codes first
 	;start := 0
 	
-    InputBox, start, The pin code to start at
-    InputBox, amount, The amout of pin codes to go through
+    InputBox, start, Enter the pincode to resume at
 	
+	MsgBox start: %start%
 	Loop
 	{
 		FileReadLine, line, four-digit-pin-codes-sorted-by-frequency-withcount.txt, %A_Index%
@@ -80,95 +80,29 @@ MButton::
 		
 		word_array := StrSplit(line, ",")  ; , splitting
 		
-		MsgBox % "The 1st word is " word_array[1]
+		;MsgBox % "The 1st word is " word_array[1]
 		;MsgBox % "The 2nd word is " word_array[2]
 		
-        ; Pad the number with zeros if we need to
-        code := word_array[1]
-        ; Try the code
+		; Pad the number with zeros if we need to
+		code := word_array[1]
+		
 		MsgBox code: %code%
-        Attempt(code)
-		;start++
 		
-		
-		
-		if(Mod(start,30)=0){
-			send {Tab}
-			
-			sleep, 100
-			send {BS}
-			sleep, 100
-			send {BS}
-			send {BS}
-			sleep, 100
-			send {BS}
-			send {BS}
-			sleep, 100
-			send {BS}
-			sleep, 100
-			
-			send, %start%
-			sleep, 100
-			
-			send {F12}
-			
-			
-			send {Tab}
-			sleep, 100
-			send {Tab}
-			sleep, 100
-		
+		if(%start%==""){
+			MsgBox Attempt(code): %code%
+			Attempt(code)
 		}
-    ; Finished, clear the tooltip
-    ToolTip
-		
+		else{
+			MsgBox passing: %code%
+			if(%start%!=code){
+				start =""
+				continue
+			}
+		}
 	}
-	MsgBox, The end of the file has been reached or there was a problem.
-	return
-
-    Log("================================= All ============================================")
-
-    while start <= amount
-    {
-        ; Pad the number with zeros if we need to
-        code = % SubStr("0000" start, -3)
-        ; Try the code
-        Attempt(code)
-        ; Onto the next
-        start++
-		
-		if(Mod(start,30)=0){
-			send {Tab}
-			
-			sleep, 100
-			send {BS}
-			sleep, 100
-			send {BS}
-			send {BS}
-			sleep, 100
-			send {BS}
-			send {BS}
-			sleep, 100
-			send {BS}
-			sleep, 100
-			
-			send, %start%
-			sleep, 100
-			
-			send {F12}
-			
-			
-			send {Tab}
-			sleep, 100
-			send {Tab}
-			sleep, 100
-		
-		}
-	
-    }
     ; Finished, clear the tooltip
     ToolTip
-
+	
 
 Return
 
