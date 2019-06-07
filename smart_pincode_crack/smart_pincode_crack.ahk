@@ -71,8 +71,8 @@ MButton::
 	MsgBox start1: %start1%
 	Loop
 	{
-		MsgBox start1: %start1%
-		MsgBox start2: %start2%
+		;MsgBox start1: %start1%
+		;MsgBox start2: %start2%
 		FileReadLine, line, four-digit-pin-codes-sorted-by-frequency-withcount.txt, %A_Index%
 		if ErrorLevel
 			break
@@ -88,10 +88,19 @@ MButton::
 		; Pad the number with zeros if we need to
 		code := word_array[1]
 		
-		MsgBox code: %code%
+		;MsgBox code: %code%
 		
-		if(start==""){
-			MsgBox if(start==""){
+		if(start1==""){
+			;MsgBox 1if(not (start1=="")){
+			;MsgBox Attempt(code): %code%
+			Attempt(code)
+		}
+		else{
+			;MsgBox 1!if(not (start1=="")){
+			if(start1==code){
+				start1=
+			}
+			continue
 		}
 		
 		
