@@ -45,7 +45,7 @@ MButton::
 		
 		bottomCount := 0
 		
-		While(bottomCount<165){
+		While(bottomCount<155){
 			MouseMove,-5,0,0,R
 			sleep 10
 			bottomCount := bottomCount+1
