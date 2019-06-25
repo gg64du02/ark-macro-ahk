@@ -3,7 +3,25 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+;reset
 F1::Reload
+
+;repriming
+F2::
+
+	test := 0
+	
+	;en permanence
+	While(test<20){
+	
+		send {Space down}
+		sleep  150
+		send {Space up}
+		sleep  150
+		
+		test := test + 1
+	}
+return
 
 MButton::
 
