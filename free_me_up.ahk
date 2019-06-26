@@ -10,7 +10,7 @@ MButton::
 	test := 0
 	
 	;en permanence
-	While(test<10){
+	While(test<100000){
 		;delay in ms
 		Sleep, 200
 		;Sleep, 10
@@ -48,10 +48,16 @@ MButton::
 		send {e up}
 		sleep 100
 		
-		if(Mod(test,30)=0){
+		if(Mod(test,20)=0){
 			sleep, 100
+				
+			send {h down}
+			sleep 100
 			
+		
 			send {F12}
+			sleep 100
+			send {h up}
 		}
 	}
 return
