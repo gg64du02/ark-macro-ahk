@@ -34,7 +34,7 @@ MButton::
 	sleep 100
 	
 	;en permanence
-	While(test<50){
+	While(test<300){
 	
 		; So the user knows what is being typed for them
 		ToolTip %test%
@@ -65,7 +65,7 @@ MButton::
 		
 		While(bottomCount<77){
 			MouseMove,-10,0,0,R
-			sleep 10
+			sleep 30
 			bottomCount := bottomCount+1
 		}
 		
@@ -88,7 +88,7 @@ MButton::
 		sleep 100
 
 		send {e up}
-		sleep 100
+		sleep 300
 		
 		;must counter the move for the loop
 		DllCall("SetCursorPos", int, 2000 int, 2000)
