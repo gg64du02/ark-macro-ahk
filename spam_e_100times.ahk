@@ -5,6 +5,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;use it with stimberries on a phioma to get feces
 
+F1::
+	Reload
+
 MButton::
 
 	test := 0
@@ -12,7 +15,8 @@ MButton::
 	;en permanence
 	While(test<100){
 		;delay in ms
-		Sleep, 150
+		Sleep, 200
+		;Sleep, 10
 		
 		test := test + 1
 		
