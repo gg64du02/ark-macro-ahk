@@ -46,7 +46,17 @@ F2::
 	diff_xpos:=0
 	diff_ypos:=0
 	
-	debug:=1
+	debug:=0
+	
+	;pwn for the 4 keys
+	;===y axis===
+	z_8_pwm:=0
+	s_8_pwm:=0
+	;===x axis===
+	q_pwm:=0
+	d_pwm:=0
+	
+	
 	
 	while(loop_forever){
 		MouseGetPos, xpos, ypos 
@@ -64,10 +74,10 @@ F2::
 		}
 		else{
 			if(diff_xpos>0){
-				;increase pwm for the x
+				;increase pwm for the x axis
 			}
 			else{
-				;decrease pwm for the x
+				;decrease pwm for the x axis
 			}
 		}
 		
