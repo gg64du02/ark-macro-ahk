@@ -6,6 +6,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 F1::
 	;Send {}
+	Send {q up}
+	Send {d up}
 	Reload
 	
 F4::
@@ -46,7 +48,7 @@ F2::
 	diff_xpos:=0
 	diff_ypos:=0
 	
-	debug:=2
+	debug:=3
 	
 	;pwn for the 4 keys (0-100)
 	;===y axis===
@@ -140,6 +142,7 @@ F2::
 			else{
 				Send {q up}
 			}
+			sleep 10
 			
 			
 			;time elapsing
