@@ -4,22 +4,6 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-F4::
-	MouseGetPos, xpos, ypos 
-	MsgBox, The cursor is at X%xpos% Y%ypos%. 
-
-	; This example allows you to move the mouse around to see
-	; the title of the window currently under the cursor:
-	#Persistent
-	SetTimer, WatchCursor, 100
-	return
-
-	WatchCursor:
-	MouseGetPos, , , id, control
-	WinGetTitle, title, ahk_id %id%
-	WinGetClass, class, ahk_id %id%
-	ToolTip, ahk_id %id%`nahk_class %class%`n%title%`nControl: %control%
-	return
 	
 F1::
 	;Send {}
@@ -27,14 +11,6 @@ F1::
 	Send {d up}
 	Reload
 	
-F3::
-	test:=0
-	while(test<100){
-		MouseGetPos, xpos, ypos 
-		MsgBox, The cursor is at X%xpos% Y%ypos%. 
-		sleep 5000
-		test:= test + 1
-	}
 	
 F2::
 	;Send {Numpad9}
@@ -75,9 +51,12 @@ F2::
 			;don't change anything
 		}
 		else{
-			;push the d or the qkey (integration)
-			d_pwm:=d_pwm-diff_xpos/2
-			q_pwm:=q_pwm+diff_xpos/2
+			;push the d or the qkey (integration) (un peu trop ample en movement)
+			;d_pwm:=d_pwm-diff_xpos/2
+			;q_pwm:=q_pwm+diff_xpos/2
+			
+			d_pwm:=d_pwm-diff_xpos/4
+			q_pwm:=q_pwm+diff_xpos/4
 			
 			;equals to:
 			;d_pwm:=diff_xpos*10
