@@ -123,6 +123,29 @@ F2::
 			MsgBox d_pwm:%d_pwm% q_pwm:%q_pwm%
 		}
 		
+		
+		;doing pwm onto controls
+		pwm_loop_time:=0
+		while(pwm_loop_time<10){
+			;issuing controls based on time
+			if(d_pwm>pwm_loop_time*10){
+				Send {d down}
+			}
+			else{
+				Send {d up}
+			}
+			if(q_pwm>pwm_loop_time*10){
+				Send {q down}
+			}
+			else{
+				Send {q up}
+			}
+			
+			
+			;time elapsing
+			pwm_loop_time:=pwm_loop_time+1
+		}
+		
 		;updating the tmp values
 		tmp_xpos:=xpos
 		tmp_ypos:=ypos
