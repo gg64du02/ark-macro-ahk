@@ -46,9 +46,9 @@ F2::
 	diff_xpos:=0
 	diff_ypos:=0
 	
-	debug:=0
+	debug:=2
 	
-	;pwn for the 4 keys
+	;pwn for the 4 keys (0-100)
 	;===y axis===
 	z_8_pwm:=0
 	s_8_pwm:=0
@@ -75,23 +75,44 @@ F2::
 		else{
 			if(diff_xpos>0){
 				;increase pwm for the x axis
+				
+				;push the d key
+				d_pwm:=d_pwm+diff_xpos
+				q_pwm:=q_pwm-diff_xpos
 			}
 			else{
 				;decrease pwm for the x axis
+				;push the q key
+				d_pwm:=d_pwm-diff_xpos
+				q_pwm:=q_pwm+diff_xpos
 			}
 		}
-		
 		
 		if(diff_ypos=0){
 			;don't change anything
 		}
 		else{
 			if(diff_ypos>0){
-				;increase pwm for the y
+				;increase pwm for the y axis
+				;push the z 8 key
 			}
 			else{
-				;decrease pwm for the y
+				;decrease pwm for the y axis
+				;push the s 8 key
 			}
+		}
+		
+		
+		;making sure it max out
+		if(d_pwm>100){
+			d_pwm:=100
+		}
+		if(q_pwm>100){
+			q_pwm:=100
+		}
+		
+		if(debug=2){
+			MsgBox d_pwm:%d_pwm% q_pwm:%q_pwm%
 		}
 		
 		;updating the tmp values
