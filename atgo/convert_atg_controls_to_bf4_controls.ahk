@@ -73,21 +73,18 @@ F2::
 			;don't change anything
 		}
 		else{
-			;push the d key
+			;push the d or the qkey
 			d_pwm:=d_pwm+diff_xpos
 			q_pwm:=q_pwm-diff_xpos
 			if(diff_xpos>0){
 				;increase pwm for the x axis
 				
 				;push the d key
-				;d_pwm:=d_pwm+diff_xpos
-				;q_pwm:=q_pwm-diff_xpos
 			}
 			else{
 				;decrease pwm for the x axis
+				
 				;push the q key
-				;d_pwm:=d_pwm-diff_xpos
-				;q_pwm:=q_pwm+diff_xpos
 			}
 		}
 		
