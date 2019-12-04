@@ -26,7 +26,65 @@ While(test<100){
 	
 	whatMenuIsCurrentlyON := whatMenuIsCurrentlyON()
 	
-	MsgBox %whatMenuIsCurrentlyON%
+	;MsgBox %whatMenuIsCurrentlyON%
+	
+	if(whatMenuIsCurrentlyON="BettingScreen"){
+		;TODO: bet here
+		;===============================
+		;find the right arrow for betting
+		;===============================
+		MouseClick, X1, Xpos_center + 275 , Ypos_center +0 , 1, 0
+
+		sleep 1000
+
+		Send {LButton down}
+
+		;===============================
+		;betting button
+		;===============================
+		sleep 200
+
+		;MouseClick, X1, Xpos_center + 150 , Ypos_center +200 , 1, 0
+
+		;MouseClickDrag, Left, Xpos_center + 275 , Ypos_center +0 , Xpos_center + 150 , Ypos_center +200 , 80
+
+		MouseMove,  Xpos_center + 150 , Ypos_center +200 , 100
+
+		sleep 1000
+
+		Send {Enter down}
+
+		sleep 1000
+
+		Send {Enter up}
+
+		sleep 35000
+
+		Send {LButton up}
+	}
+	
+	
+	if(whatMenuIsCurrentlyON="BetAndRulesScreen"){
+		;TODO: click on replay here
+	}
+
+
+	if(whatMenuIsCurrentlyON="ResutsScreeen"){
+		;TODO: click on replay here
+		;===============================
+		;click replay
+		;===============================
+
+		MouseMove,  Xpos_center + 0 , Ypos_center +350 , 100
+
+		sleep 1000
+
+		Send {LButton down}
+
+		sleep 1000
+
+		Send {LButton down}
+	}
 
 
 }
@@ -56,10 +114,10 @@ whatMenuIsCurrentlyON(){
 	;PixelGetColor, colorCinq, 146, 46, RGB
 	;PixelGetColor, colorCinq, 54, 28, RGB
 	PixelGetColor, colorCinq, 4, 176, RGB
-	MsgBox colorCinq:%colorCinq%
+	;MsgBox colorCinq:%colorCinq%
 	
 	if(	( colorCinq = "0x151515" )){
-		MsgBox "greypixel"
+		;MsgBox "greypixel"
 	}
 	
 	;TODO: remove conflict with ResutsScreeen
