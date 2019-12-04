@@ -98,6 +98,8 @@ whatMenuIsCurrentlyON(){
 			}
 		}
 	}
+	
+	;TODO: detect rules screen when miss-click ?
 
 
 	;TODO
