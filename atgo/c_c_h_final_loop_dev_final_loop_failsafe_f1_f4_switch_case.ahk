@@ -121,6 +121,38 @@ While(test<100){
 
 		Send {LButton down}
 	}
+	
+	
+	if(whatMenuIsCurrentlyON="EndOfRace"){
+		;TODO: is stuck, getting it unstuck
+		
+		Send {LButton down}
+		sleep 1000
+		Send {LButton up}
+		sleep 1000
+		Send {LButton down}
+		sleep 1000
+		Send {LButton up}
+		sleep 1000
+		
+		Send {Esc down}
+		sleep 3000
+		Send {Esc up}
+		sleep 5000
+		
+		Send {LButton down}
+		sleep 1000
+		Send {LButton up}
+		sleep 1000
+	}
+	
+	
+	;MsgBox whatMenuIsCurrentlyON:%whatMenuIsCurrentlyON%
+	if(whatMenuIsCurrentlyON=0){
+		;TODO: is stuck, getting it unstuck
+		;MsgBox is stuck, getting it unstuck
+	}
+
 
 
 }
