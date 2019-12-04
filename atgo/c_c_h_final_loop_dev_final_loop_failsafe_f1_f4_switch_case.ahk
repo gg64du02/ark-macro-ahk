@@ -22,7 +22,11 @@ While(test<100){
 	Ypos_center := Yres / 2
 
 	;adjust to allow recovery
-	;sleep 1000
+	sleep 1000
+	
+	whatMenuIsCurrentlyON := whatMenuIsCurrentlyON()
+	
+	MsgBox %whatMenuIsCurrentlyON%
 
 
 }
@@ -41,7 +45,17 @@ whatMenuIsCurrentlyON(){
 		;MsgBox whatMenuIsCurrentlyON:oui2
 		if(	( colorTrois = "0xB8C5DB" ) AND ( colorQuatre = "0xB8C5DB" ) ){
 		;end of race screen here
-		return EndOfRace
+		return "EndOfRace"
+		}
+	}
+	
+	
+	;MsgBox whatMenuIsCurrentlyON:oui3
+	if(	( colorUn = "0xDE1400" ) AND ( colorDeux = "0xDE1400" ) ){
+		;MsgBox whatMenuIsCurrentlyON:oui4
+		if(	( colorTrois = "0xDE1400" ) AND ( colorQuatre = "0xDE1400" ) ){
+		;end of race screen here
+		return "ResutsScreeen"
 		}
 	}
 
