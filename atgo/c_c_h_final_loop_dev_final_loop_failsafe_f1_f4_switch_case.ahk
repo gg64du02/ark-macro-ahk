@@ -51,20 +51,23 @@ whatMenuIsCurrentlyON(){
 	
 	;146 56 151515
 	;25+3 28+26 141618
+	;1+3 150+26 8F918F
 	
 	;PixelGetColor, colorCinq, 146, 46, RGB
-	PixelGetColor, colorCinq, 54, 28, RGB
+	;PixelGetColor, colorCinq, 54, 28, RGB
+	PixelGetColor, colorCinq, 4, 176, RGB
 	MsgBox colorCinq:%colorCinq%
 	
 	if(	( colorCinq = "0x151515" )){
 		MsgBox "greypixel"
 	}
 	
+	;TODO: remove conflict with ResutsScreeen
 	;MsgBox whatMenuIsCurrentlyON:oui7
 	if(	( colorUn = "0xDE1400" ) AND ( colorDeux = "0xDE1400" ) ){
 		;MsgBox whatMenuIsCurrentlyON:oui8
 		if(	( colorTrois = "0xDE1400" ) AND ( colorQuatre = "0xDE1400" ) ){
-			if(	( colorCinq = "0xE11400" )){
+			if(	( colorCinq = "0xE92400" )){
 				;end of race screen here
 				return "BettingScreen"
 			}
@@ -72,25 +75,27 @@ whatMenuIsCurrentlyON(){
 	}
 	
 	
-	
-	
-	;TODO: remove conflict with BetAndRulesScreen
+	;DONE: remove conflict with BetAndRulesScreen
 	;MsgBox whatMenuIsCurrentlyON:oui3
 	if(	( colorUn = "0xDE1400" ) AND ( colorDeux = "0xDE1400" ) ){
 		;MsgBox whatMenuIsCurrentlyON:oui4
 		if(	( colorTrois = "0xDE1400" ) AND ( colorQuatre = "0xDE1400" ) ){
-		;end of race screen here
-		return "ResutsScreeen"
+			if(	( colorCinq = "0x8F918F" )){
+				;end of race screen here
+				return "ResutsScreeen"
+			}	
 		}
 	}
 	
-	;TODO: remove conflict with ResutsScreeen
+	;DONE: remove conflict with ResutsScreeen
 	;MsgBox whatMenuIsCurrentlyON:oui5
 	if(	( colorUn = "0x12002F" ) AND ( colorDeux = "0x12002F" ) ){
 		;MsgBox whatMenuIsCurrentlyON:oui6
 		if(	( colorTrois = "0x130030" ) AND ( colorQuatre = "0x130030" ) ){
-		;end of race screen here
-		return "BetAndRulesScreen"
+			if(	( colorCinq = "0x210044" )){
+				;end of race screen here
+				return "BetAndRulesScreen"
+			}
 		}
 	}
 
