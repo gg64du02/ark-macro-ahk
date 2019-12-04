@@ -22,7 +22,7 @@ While(test<100){
 	Ypos_center := Yres / 2
 
 	;adjust to allow recovery
-	sleep 5000
+	sleep 1000
 	
 	whatMenuIsCurrentlyON := whatMenuIsCurrentlyON()
 	
