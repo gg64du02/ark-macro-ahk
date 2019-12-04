@@ -30,6 +30,25 @@ While(test<100){
 	
 	if(whatMenuIsCurrentlyON="BettingScreen"){
 		;TODO: bet here
+		
+		;===============================
+		;(1st horse)
+		;===============================
+		;MouseClick, X1, Xpos_center - 300 , Ypos_center - 150 , 1, 0
+
+		;===============
+		;horse 6
+		;===============
+		MouseClick, X1,  Xpos_center - 100, Ypos_center +325 , 100
+
+		sleep 100
+
+		Send {LButton down}
+
+		sleep 100
+
+		Send {LButton up}
+		
 		;===============================
 		;find the right arrow for betting
 		;===============================
@@ -65,7 +84,24 @@ While(test<100){
 	
 	
 	if(whatMenuIsCurrentlyON="BetAndRulesScreen"){
-		;TODO: click on replay here
+		;TODO: click on bet here
+		sleep 1000
+
+		;MouseClick, X1, Xpos_center + 350 , Ypos_center - 200 , 1, 0
+
+		MouseClick, X1, Xpos_center + 100 , Ypos_center + 250 , 1, 0
+
+		sleep 100
+
+		MouseClick, left
+
+		sleep 100
+
+		Send {LButton down}
+		
+		sleep 100
+
+		Send {LButton up}
 	}
 
 
