@@ -11,7 +11,7 @@ F4::
 
 test := 0
 
-While(test<100){
+While(test<1000){
 
 	test := test + 1
 
@@ -39,7 +39,8 @@ While(test<100){
 		;===============
 		;horse 6
 		;===============
-		MouseClick, X1,  Xpos_center - 100, Ypos_center +325 , 100
+		;MouseClick, X1,  Xpos_center - 100, Ypos_center +325 , 100
+		MouseClick, X1,  Xpos_center - 100, Ypos_center -  150 +95*2 , 100
 
 		sleep 100
 
