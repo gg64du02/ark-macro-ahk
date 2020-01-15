@@ -65,7 +65,7 @@ xMonitor(id:=0,dx:=0,dy:=0){
 		
 
 		
-		debug:=1
+		debug:=0
 		
 		;pwn for the 4 keys (0-100)
 		;===y axis===
@@ -102,8 +102,8 @@ xMonitor(id:=0,dx:=0,dy:=0){
 			;d_pwm:=d_pwm-diff_xpos/2
 			;q_pwm:=q_pwm+diff_xpos/2
 			
-			d_pwm:=d_pwm-diff_xpos/1
-			q_pwm:=q_pwm+diff_xpos/1
+			d_pwm:=d_pwm+diff_xpos/4
+			q_pwm:=q_pwm-diff_xpos/4
 			
 			;equals to:
 			;d_pwm:=diff_xpos*10
@@ -125,8 +125,8 @@ xMonitor(id:=0,dx:=0,dy:=0){
 			;don't change anything
 		}
 		else{
-			eight_pwm:=eight_pwm-diff_ypos/1
-			five_pwm:=five_pwm+diff_ypos/1
+			eight_pwm:=eight_pwm+diff_ypos/4
+			five_pwm:=five_pwm-diff_ypos/4
 			if(diff_ypos>0){
 				;increase pwm for the y axis
 				;push the 8 key

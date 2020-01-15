@@ -78,13 +78,15 @@ F2::
 			;don't change anything
 		}
 		else{
+			;eight_pwm:=eight_pwm-diff_ypos/4
+			;five_pwm:=five_pwm+diff_ypos/4
 			if(diff_ypos>0){
 				;increase pwm for the y axis
-				;push the z 8 key
+				;push the 8 key
 			}
 			else{
 				;decrease pwm for the y axis
-				;push the s 8 key
+				;push the 5 key
 			}
 		}
 		
