@@ -14,8 +14,15 @@ Gui, Submit  ; Save the input from the user to each control's associated variabl
 ;MsgBox You entered "%TranslateThis%"
 ;MsgBox, % GoogleTranslate(TranslateThis, "en", "ru")
 Translated = % GoogleTranslate(TranslateThis, "en", "ru")
-MsgBox, %Translated%
-;send %Translated%
+;MsgBox, %Translated%
+sleep 5000
+send {t down}
+sleep 20
+send {t up}
+sleep 2000
+send %Translated%
+;ExitApp
+return
 ExitApp
 
 
