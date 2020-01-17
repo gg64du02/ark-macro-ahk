@@ -1,5 +1,8 @@
 ﻿;based on https://www.autohotkey.com/boards/viewtopic.php?t=63835
 
+F1::
+	Reload
+	return
 
 F4::
 Gui, Add, Text,, translate this:
@@ -12,6 +15,7 @@ GuiClose:
 ButtonTYPE:
 Gui, Submit  ; Save the input from the user to each control's associated variable.
 ;MsgBox You entered "%TranslateThis%"
+;return
 ;MsgBox, % GoogleTranslate(TranslateThis, "en", "ru")
 Translated = % GoogleTranslate(TranslateThis, "en", "ru")
 ;MsgBox, %Translated%
@@ -22,6 +26,7 @@ send {t up}
 sleep 2000
 send %Translated%
 ;ExitApp
+Reload
 return
 ExitApp
 
