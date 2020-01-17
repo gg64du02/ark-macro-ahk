@@ -5,9 +5,12 @@ F1::
 	return
 
 F4::
-Gui, Add, Text,, translate this:
+Gui, Add, Text,, translate this (english):
 Gui, Add, Edit, vTranslateThis ym  ; The ym option starts a new column of controls.
 Gui, Add, Button, default, TYPE  ; The label ButtonOK (if it exists) will be run when the button is pressed.
+Gui, Add, Text,, into this languge:
+LangChoice ="en"
+Gui, Add, ListBox, r5 vLangChoice, en|de|ru
 Gui, Show,, Simple Input Example
 return  ; End of auto-execute section. The script is idle until the user does something.
 
@@ -17,7 +20,8 @@ Gui, Submit  ; Save the input from the user to each control's associated variabl
 ;MsgBox You entered "%TranslateThis%"
 ;return
 ;MsgBox, % GoogleTranslate(TranslateThis, "en", "ru")
-Translated = % GoogleTranslate(TranslateThis, "en", "ru")
+;Translated = % GoogleTranslate(TranslateThis, "en", "ru")
+Translated = % GoogleTranslate(TranslateThis, "en", LangChoice)
 ;MsgBox, %Translated%
 sleep 5000
 send {t down}
